@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--声明student对象-->
+<!--    注入：就是赋值的意思-->
+    <bean id="myStudent" class="com.bjpowernode.ba04.Student" autowire="byName">
+        <property name="name" value="李四"></property>
+        <property name="age" value="26"></property>
+<!--        <property name="school" ref="mySchool"></property>-->
+    </bean>
+
+
+
+    <bean id="school" class="com.bjpowernode.ba04.School">
+        <property name="name" value="清华大学"></property>
+        <property name="address" value="北京海淀区"></property>
+    </bean>
+</beans>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--声明student对象-->
+<!--    注入：就是赋值的意思-->
+    <bean id="myStudent" class="com.bjpowernode.ba01.Student">
+        <property name="name" value="李四"></property>
+        <property name="age" value="20"></property>
+    </bean>
+</beans>

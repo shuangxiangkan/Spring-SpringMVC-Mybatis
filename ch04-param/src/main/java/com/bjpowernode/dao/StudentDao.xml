@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bjpowernode.dao.StudentDao">
+    <select id="selectStudentById" parameterType="java.lang.Integer" resultType="com.bjpowernode.domain.Student">
+        select id,name,email,age from student where id=#{id}
+    </select>
+
+    <select id="selectMultiParam" resultType="com.bjpowernode.domain.Student">
+        select id,name,email,age from student where name=#{myname} or age=#{myage}
+    </select>
+
+<!--    多个参数，使用java对象的属性值，作为参数实际值-->
+    <select id="selectMultiObject" resultType="com.bjpowernode.domain.Student">
+        select id,name,email,age from student where
+        name=#{paramName} or age=#{paramAge}
+    </select>
+
+
+    <select id="selectStudentIf" resultType="com.bjpowernode.domain.Student">
+        select id,name,age,email from student
+        where
+        <if test="name !=null and name !='' ">
+            name=#{name}
+        </if>
+        <if test="age>0">
+            and age>#{age}
+        </if>
+    </select>
+</mapper>
